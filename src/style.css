@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --color-primario: #43e97b;
+  --color-secundario: #38f9d7;
+  --color-acento: #f6d365;
+  --color-acento2: #fda085;
+  --color-azul: #4fd1c5;
+  --color-amarillo: #ffe066;
+  --color-fondo: #f4f8fb;
+  --color-texto: #222;
+  --color-blanco: #fff;
+  --color-gris: #e0e0e0;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(120deg, var(--color-azul) 0%, var(--color-acento) 50%, var(--color-acento2) 100%);
+  color: var(--color-texto);
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+a {
+  color: var(--color-azul);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--color-acento2);
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 2px 12px rgba(67,233,123,0.09);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 0 0 18px 18px;
+  backdrop-filter: blur(6px);
+}
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--color-primario);
+  font-weight: bold;
+}
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Footer */
+.footer {
+  background: rgba(255,255,255,0.9);
+  color: var(--color-secundario);
+  text-align: center;
+  padding: 1.5rem 0 1rem 0;
+  margin-top: 3rem;
+  box-shadow: 0 -2px 8px rgba(67,233,123,0.07);
+  border-radius: 18px 18px 0 0;
+}
+
+/* Tarjetas y cards */
+.card, .el-card, .planificador-card, .dashboard-card, .perfil-card {
+  background: var(--color-blanco);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(67,233,123,0.09);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Botones globales */
+.btn, .el-button, .btn-agregar, .btn-login, .btn-cerrar {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--color-primario), var(--color-acento2));
+  color: #fff !important;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(67,233,123,0.07);
+  cursor: pointer;
+}
+.btn:hover, .el-button:hover, .btn-agregar:hover, .btn-login:hover, .btn-cerrar:hover {
+  background: linear-gradient(90deg, var(--color-acento), var(--color-secundario));
+  color: #fff !important;
+  transform: scale(1.04);
+}
+
+/* Inputs y formularios */
+input, textarea, select {
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1em;
+  background: #fffbe6;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 4px rgba(246,211,101,0.07);
+  transition: box-shadow 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--color-azul);
+  box-shadow: 0 2px 8px rgba(67,233,123,0.13);
+}
+
+/* Animaciones suaves */
+.fade-in {
+  animation: fadeIn 0.7s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .navbar, .navbar-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .card, .el-card, .planificador-card, .dashboard-card, .perfil-card {
+    padding: 1rem;
+  }
+}
